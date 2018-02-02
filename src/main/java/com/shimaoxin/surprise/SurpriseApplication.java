@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("com.shimaoxin.surprise.dao.*")
-public class BootMybatisApplication {
+public class SurpriseApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BootMybatisApplication.class, args);
+		SpringApplication.run(SurpriseApplication.class, args);
 	}
 }
