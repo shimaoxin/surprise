@@ -100,8 +100,11 @@
 			<version>0.4.14</version>
 			<configuration>
 				<imageName>${project.artifactId}</imageName>
-				<dockerDirectory>src/main/docker</dockerDirectory>
+				<dockerDirectory>src/main/resources/docker</dockerDirectory>
 				<dockerHost>http://120.79.90.216:2357</dockerHost>
+				<imageTags>
+					<tag>${project.version}</tag>
+				</imageTags>
 				<resources>
 					<resource>
 						<targetPath>/</targetPath>
