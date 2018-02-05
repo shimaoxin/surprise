@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shimaoxin.surprise.dao.user.UserAttributeRecordMapper" >
+  <resultMap id="BaseResultMap" type="com.shimaoxin.surprise.model.user.UserAttributeRecord" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="userid" property="userid" jdbcType="VARCHAR" />
+    <result column="eventid" property="eventid" jdbcType="VARCHAR" />
+    <result column="attributeName" property="attributename" jdbcType="VARCHAR" />
+    <result column="changeValue" property="changevalue" jdbcType="INTEGER" />
+    <result column="changeType" property="changetype" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="createDate" property="createdate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, userid, eventid, attributeName, changeValue, changeType, remark, createDate
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.shimaoxin.surprise.model.user.UserAttributeRecordExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_attribute_record
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_attribute_record
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_user_attribute_record
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.shimaoxin.surprise.model.user.UserAttributeRecordExample" >
+    delete from t_user_attribute_record
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.shimaoxin.surprise.model.user.UserAttributeRecord" >
+    insert into t_user_attribute_record (id, userid, eventid, 
+      attributeName, changeValue, changeType, 
+      remark, createDate)
+    values (#{id,jdbcType=VARCHAR}, #{userid,jdbcType=VARCHAR}, #{eventid,jdbcType=VARCHAR}, 
+      #{attributename,jdbcType=VARCHAR}, #{changevalue,jdbcType=INTEGER}, #{changetype,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{createdate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.shimaoxin.surprise.model.user.UserAttributeRecord" >
+    insert into t_user_attribute_record
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="eventid != null" >
+        eventid,
+      </if>
+      <if test="attributename != null" >
+        attributeName,
+      </if>
+      <if test="changevalue != null" >
+        changeValue,
+      </if>
+      <if test="changetype != null" >
+        changeType,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="createdate != null" >
+        createDate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="eventid != null" >
+        #{eventid,jdbcType=VARCHAR},
+      </if>
+      <if test="attributename != null" >
+        #{attributename,jdbcType=VARCHAR},
+      </if>
+      <if test="changevalue != null" >
+        #{changevalue,jdbcType=INTEGER},
+      </if>
+      <if test="changetype != null" >
+        #{changetype,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null" >
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.shimaoxin.surprise.model.user.UserAttributeRecordExample" resultType="java.lang.Integer" >
+    select count(*) from t_user_attribute_record
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update t_user_attribute_record
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userid != null" >
+        userid = #{record.userid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.eventid != null" >
+        eventid = #{record.eventid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.attributename != null" >
+        attributeName = #{record.attributename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.changevalue != null" >
+        changeValue = #{record.changevalue,jdbcType=INTEGER},
+      </if>
+      <if test="record.changetype != null" >
+        changeType = #{record.changetype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null" >
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createdate != null" >
+        createDate = #{record.createdate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update t_user_attribute_record
+    set id = #{record.id,jdbcType=VARCHAR},
+      userid = #{record.userid,jdbcType=VARCHAR},
+      eventid = #{record.eventid,jdbcType=VARCHAR},
+      attributeName = #{record.attributename,jdbcType=VARCHAR},
+      changeValue = #{record.changevalue,jdbcType=INTEGER},
+      changeType = #{record.changetype,jdbcType=VARCHAR},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      createDate = #{record.createdate,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shimaoxin.surprise.model.user.UserAttributeRecord" >
+    update t_user_attribute_record
+    <set >
+      <if test="userid != null" >
+        userid = #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="eventid != null" >
+        eventid = #{eventid,jdbcType=VARCHAR},
+      </if>
+      <if test="attributename != null" >
+        attributeName = #{attributename,jdbcType=VARCHAR},
+      </if>
+      <if test="changevalue != null" >
+        changeValue = #{changevalue,jdbcType=INTEGER},
+      </if>
+      <if test="changetype != null" >
+        changeType = #{changetype,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null" >
+        createDate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shimaoxin.surprise.model.user.UserAttributeRecord" >
+    update t_user_attribute_record
+    set userid = #{userid,jdbcType=VARCHAR},
+      eventid = #{eventid,jdbcType=VARCHAR},
+      attributeName = #{attributename,jdbcType=VARCHAR},
+      changeValue = #{changevalue,jdbcType=INTEGER},
+      changeType = #{changetype,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      createDate = #{createdate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

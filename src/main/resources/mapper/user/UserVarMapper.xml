@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shimaoxin.surprise.dao.user.UserVarMapper" >
+  <resultMap id="BaseResultMap" type="com.shimaoxin.surprise.model.user.UserVar" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="clientId" property="clientid" jdbcType="VARCHAR" />
+    <result column="varName" property="varname" jdbcType="VARCHAR" />
+    <result column="varValue" property="varvalue" jdbcType="INTEGER" />
+    <result column="dayValue" property="dayvalue" jdbcType="INTEGER" />
+    <result column="weekValue" property="weekvalue" jdbcType="INTEGER" />
+    <result column="monthValue" property="monthvalue" jdbcType="INTEGER" />
+    <result column="yearValue" property="yearvalue" jdbcType="INTEGER" />
+    <result column="lastTime" property="lasttime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, clientId, varName, varValue, dayValue, weekValue, monthValue, yearValue, lastTime
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.shimaoxin.surprise.model.user.UserVarExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_var
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_var
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_user_var
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.shimaoxin.surprise.model.user.UserVarExample" >
+    delete from t_user_var
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.shimaoxin.surprise.model.user.UserVar" >
+    insert into t_user_var (id, clientId, varName, 
+      varValue, dayValue, weekValue, 
+      monthValue, yearValue, lastTime
+      )
+    values (#{id,jdbcType=VARCHAR}, #{clientid,jdbcType=VARCHAR}, #{varname,jdbcType=VARCHAR}, 
+      #{varvalue,jdbcType=INTEGER}, #{dayvalue,jdbcType=INTEGER}, #{weekvalue,jdbcType=INTEGER}, 
+      #{monthvalue,jdbcType=INTEGER}, #{yearvalue,jdbcType=INTEGER}, #{lasttime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.shimaoxin.surprise.model.user.UserVar" >
+    insert into t_user_var
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="clientid != null" >
+        clientId,
+      </if>
+      <if test="varname != null" >
+        varName,
+      </if>
+      <if test="varvalue != null" >
+        varValue,
+      </if>
+      <if test="dayvalue != null" >
+        dayValue,
+      </if>
+      <if test="weekvalue != null" >
+        weekValue,
+      </if>
+      <if test="monthvalue != null" >
+        monthValue,
+      </if>
+      <if test="yearvalue != null" >
+        yearValue,
+      </if>
+      <if test="lasttime != null" >
+        lastTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="clientid != null" >
+        #{clientid,jdbcType=VARCHAR},
+      </if>
+      <if test="varname != null" >
+        #{varname,jdbcType=VARCHAR},
+      </if>
+      <if test="varvalue != null" >
+        #{varvalue,jdbcType=INTEGER},
+      </if>
+      <if test="dayvalue != null" >
+        #{dayvalue,jdbcType=INTEGER},
+      </if>
+      <if test="weekvalue != null" >
+        #{weekvalue,jdbcType=INTEGER},
+      </if>
+      <if test="monthvalue != null" >
+        #{monthvalue,jdbcType=INTEGER},
+      </if>
+      <if test="yearvalue != null" >
+        #{yearvalue,jdbcType=INTEGER},
+      </if>
+      <if test="lasttime != null" >
+        #{lasttime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.shimaoxin.surprise.model.user.UserVarExample" resultType="java.lang.Integer" >
+    select count(*) from t_user_var
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update t_user_var
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.clientid != null" >
+        clientId = #{record.clientid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.varname != null" >
+        varName = #{record.varname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.varvalue != null" >
+        varValue = #{record.varvalue,jdbcType=INTEGER},
+      </if>
+      <if test="record.dayvalue != null" >
+        dayValue = #{record.dayvalue,jdbcType=INTEGER},
+      </if>
+      <if test="record.weekvalue != null" >
+        weekValue = #{record.weekvalue,jdbcType=INTEGER},
+      </if>
+      <if test="record.monthvalue != null" >
+        monthValue = #{record.monthvalue,jdbcType=INTEGER},
+      </if>
+      <if test="record.yearvalue != null" >
+        yearValue = #{record.yearvalue,jdbcType=INTEGER},
+      </if>
+      <if test="record.lasttime != null" >
+        lastTime = #{record.lasttime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update t_user_var
+    set id = #{record.id,jdbcType=VARCHAR},
+      clientId = #{record.clientid,jdbcType=VARCHAR},
+      varName = #{record.varname,jdbcType=VARCHAR},
+      varValue = #{record.varvalue,jdbcType=INTEGER},
+      dayValue = #{record.dayvalue,jdbcType=INTEGER},
+      weekValue = #{record.weekvalue,jdbcType=INTEGER},
+      monthValue = #{record.monthvalue,jdbcType=INTEGER},
+      yearValue = #{record.yearvalue,jdbcType=INTEGER},
+      lastTime = #{record.lasttime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shimaoxin.surprise.model.user.UserVar" >
+    update t_user_var
+    <set >
+      <if test="clientid != null" >
+        clientId = #{clientid,jdbcType=VARCHAR},
+      </if>
+      <if test="varname != null" >
+        varName = #{varname,jdbcType=VARCHAR},
+      </if>
+      <if test="varvalue != null" >
+        varValue = #{varvalue,jdbcType=INTEGER},
+      </if>
+      <if test="dayvalue != null" >
+        dayValue = #{dayvalue,jdbcType=INTEGER},
+      </if>
+      <if test="weekvalue != null" >
+        weekValue = #{weekvalue,jdbcType=INTEGER},
+      </if>
+      <if test="monthvalue != null" >
+        monthValue = #{monthvalue,jdbcType=INTEGER},
+      </if>
+      <if test="yearvalue != null" >
+        yearValue = #{yearvalue,jdbcType=INTEGER},
+      </if>
+      <if test="lasttime != null" >
+        lastTime = #{lasttime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shimaoxin.surprise.model.user.UserVar" >
+    update t_user_var
+    set clientId = #{clientid,jdbcType=VARCHAR},
+      varName = #{varname,jdbcType=VARCHAR},
+      varValue = #{varvalue,jdbcType=INTEGER},
+      dayValue = #{dayvalue,jdbcType=INTEGER},
+      weekValue = #{weekvalue,jdbcType=INTEGER},
+      monthValue = #{monthvalue,jdbcType=INTEGER},
+      yearValue = #{yearvalue,jdbcType=INTEGER},
+      lastTime = #{lasttime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
