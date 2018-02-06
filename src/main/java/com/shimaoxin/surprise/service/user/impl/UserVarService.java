@@ -211,8 +211,8 @@ public class UserVarService implements IUserVarService{
      * @param clientId
      * @param varName
      * @return
-     * @author 石茂新 232601982@qq.com    
-     * @date 2017年5月15日 下午4:05:15 
+     * @author 石茂新 232601982@qq.com
+     * @date 2017年5月15日 下午4:05:15
      */
     public int getDayVar(String clientId, String varName) {
         UserVar userVar = getUserVar(clientId, varName);

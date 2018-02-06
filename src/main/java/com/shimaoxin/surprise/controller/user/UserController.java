@@ -1,42 +1,61 @@
 package com.shimaoxin.surprise.controller.user;
 
+import com.shimaoxin.surprise.controller.BaseController;
 import com.shimaoxin.surprise.model.user.User;
 import com.shimaoxin.surprise.model.user.UserExample;
+import com.shimaoxin.surprise.service.meet.IMeetRecordService;
+import com.shimaoxin.surprise.service.meet.IUserMeetService;
+import com.shimaoxin.surprise.service.user.IUserAttributeService;
 import com.shimaoxin.surprise.service.user.IUserService;
-import net.sf.json.JSONArray;
+import com.shimaoxin.surprise.util.MD5Util;
+import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
-import java.util.UUID;
 
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class UserController extends BaseController{
 
     @Autowired
     private IUserService userService;
 
+    @Autowired
+    private IMeetRecordService meetRecordService;
+
+    @Autowired
+    private IUserMeetService userMeetService;
+
+    @Autowired
+    private IUserAttributeService attributeSerive;
+
+
     @RequestMapping("/showUser")
     @ResponseBody
     public String showUser() {
-        UserExample exa = new UserExample();
-        UserExample.Criteria crit = exa.createCriteria();
-        List<User> users =  userService.selectByExample(exa);
-        JSONArray array = JSONArray.fromObject(users);
-
-        return array.toString();
+        User usr = this.getCurrentUser();
+        JSONObject json = JSONObject.fromObject(usr);
+        return json.toString();
     }
 
-    @RequestMapping("/addUser")
+    @RequestMapping("/login")
     @ResponseBody
-    public int addUser() {
-        User user = new User();
-        user.setId(UUID.randomUUID().toString());
-        user.setUsername("岳陈");
-        return userService.insertSelective(user);
+    public boolean login(HttpSession session, String loginName, String password) {
+        //查找数据库
+        UserExample exa = new UserExample();
+        UserExample.Criteria cirt = exa.createCriteria();
+        cirt.andLoginnameEqualTo(loginName);
+        cirt.andPasswordEqualTo(MD5Util.MD5(password));
+        List<User> users = userService.selectByExample(exa);
+        if(users == null || users.size() == 0)  return false;
+        User user = users.get(0);
+        this.setCurrentUser(user);
+        return true;
     }
+
 
 }
