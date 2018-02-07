@@ -8,11 +8,11 @@ import com.shimaoxin.surprise.service.meet.IUserMeetService;
 import com.shimaoxin.surprise.service.user.IUserAttributeService;
 import com.shimaoxin.surprise.service.user.IUserService;
 import com.shimaoxin.surprise.util.MD5Util;
-import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -36,10 +36,11 @@ public class UserController extends BaseController{
 
     @RequestMapping("/showUser")
     @ResponseBody
-    public String showUser() {
-        User usr = this.getCurrentUser();
-        JSONObject json = JSONObject.fromObject(usr);
-        return json.toString();
+    public ModelAndView showUser(ModelAndView mav) {
+        mav.setViewName("index");
+        User user = this.getCurrentUser();
+        mav.addObject("user", user);
+        return mav;
     }
 
     @RequestMapping("/login")

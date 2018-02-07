@@ -5,7 +5,7 @@
 
 	<groupId>com.shimaoxin</groupId>
 	<artifactId>surprise</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>surprise</name>
@@ -52,6 +52,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
+		</dependency>
+		<!-- freemarker -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
 		</dependency>
 		<!-- alibaba的druid数据库连接池 -->
 		<dependency>
@@ -107,12 +112,9 @@
 			<artifactId>docker-maven-plugin</artifactId>
 			<version>0.4.14</version>
 			<configuration>
-				<imageName>${project.artifactId}</imageName>
+				<imageName>${project.artifactId}/20180206</imageName>
 				<dockerDirectory>src/main/resources/docker</dockerDirectory>
 				<dockerHost>http://120.79.90.216:2357</dockerHost>
-				<imageTags>
-					<tag>${project.version}</tag>
-				</imageTags>
 				<resources>
 					<resource>
 						<targetPath>/</targetPath>
