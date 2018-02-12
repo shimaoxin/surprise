@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>渝金所-个人信息</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link href="css/style-all.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <style>
+        .a_details-cc{
+            width: 100%;
+        }
+        .experience-box{
+            height: 6px;
+            background: #fff;
+            border-radius: 5px;
+            width: 55%;
+            border: none;
+            margin: 0 10px;
+            margin-top: 5px;
+        }
+        .experience-cc{
+            height: 6px;
+            background: #ff4e41;
+            border-radius: 5px;
+            border: none;
+        }
+        .experience-all{
+            padding-top: 7%;
+            width: 65%;
+            font-size: 12px;
+        }
+        .a-top-cc{
+            position: relative;
+            padding: 14.8% 15px;
+            background: url("picture/about_bg.png");
+            background-size:100%;
+        }
+        .a_nun{
+            margin-top:-15px;
+            font-size: 10px;
+            margin-left: -25px;
+        }
+        .a_sign{
+            position: absolute;
+            right: 15px;
+            top: 12px;
+        }
+        .a_content-cc{
+            clear: both;
+            padding: 0 15px;
+            margin-top: 8px;
+        }
+        .a_cc1{
+            border-bottom: 1px solid #f4f4f4;
+            padding-bottom: 8px;
+        }
+        .a_cc1 ul li{
+            width: 33.3%;
+            color: #101010;
+            font-size: 20px;
+            text-align: center;
+        }
+        .cc1-tt{
+            color: #999;
+            font-size: 15px;
+        }
+        .a_cc2{
+            margin: 25px 0 25px;
+        }
+        .a_cc2 input{
+            border: none;
+            width: 100px;
+            border-radius: 25px;
+            height: 35px;
+            font-size: 15px;
+        }
+        .a_cc2 input:first-child{
+            background: #f2d271;
+            color: #101010;
+        }
+        .a_cc2 input:last-child{
+            margin-left: 16%;
+            background: #fff;
+            border: 1px solid #b0b0b0;
+            color: #b0b0b0;
+        }
+        .a_cc3 li{
+            height: 70px;
+            padding:25px 0 10px;
+            text-align: center;
+            width: 33%;
+            font-size: 14px;
+            line-height: 26px;
+            color: #57587c;
+            border-right: 1px solid #f4f4f4;
+            border-bottom: 1px solid #f4f4f4;
+        }
+        .a_cc3 a:nth-child(3n) li{
+            border-right: none!important;
+        }
+        .a_cc3 a:nth-child(7) li,.a_cc3 a:nth-child(8) li,.a_cc3 a:nth-child(9) li{
+            border-bottom: none!important;
+        }
+        .tc-c2{
+            width: 82% !important;
+            line-height: 24px;
+            font-size: 15px!important;
+            margin-top: -40px;
+        }
+        .tc-tt2{
+            font-size: 18px;
+        }
+        .tc-c2 img{
+            margin-bottom: 0px!important;
+        }
+        .tc-cc3{
+            margin-top: 10px!important;
+        }
+        .tc-c{
+            display: block!important;
+        }
+        .m-page-all{
+            padding-bottom: 55px;
+        }
+        .m-page-all{
+            padding-bottom: 55px;
+        }
+        @media (min-width: 414px) {
+            .a-top-cc {
+                padding: 15.6% 15px;
+            }
+        }
+        @media (max-width: 330px) {
+            .a-top-cc {
+                padding: 13% 15px;
+            }
+        }
+        body{
+            background: #fafafa;
+        }
+    </style>
+</head>
+<body>
+<div class="m-page-all">
+
+    <!--验证、弹窗、警告-->
+    <div class="tc_box" align="center">
+        <div class="tc-c tc-c2">
+            <p><img src="images/icon/l_warn.png" width="35"></p>
+            <p class="tc-tt2">公测中</p>
+            <p class="tc-cc3">1.请使用电脑端打开官网进行认证投标</p>
+            <p>2.APP优先体验请联系客服电话</p>
+            <p><a href="tel:400-618-8828">400-618-8828</a></p>
+        </div>
+    </div>
+
+    <!--头部个人信息 -->
+    <div class="a-top-cc">
+        <div class="a_details-cc">
+            <p class="a_sign"><img src="images/icon/qiandao.png" width="32"></p>
+            <p class="fl" style="margin-right: 6px"><img src="images/icon/a_touxiang.png" width="65"></p>
+            <div class="fl experience-all">
+                <p class="fl">LV0</p>
+                <div class="experience-box fl">
+                    <p class="experience-cc fl"></p>
+                    <p class="a_nun fl">30%</p>
+                </div>
+                <p class="fl">LV1</p>
+            </div>
+            <p style="clear: both"></p>
+        </div>
+    </div>
+
+    <!--内容部分-->
+    <div class="a_content-cc">
+
+        <!--个人账户信息-->
+        <div class="a_cc1">
+            <ul>
+                <li class="fl"><p>10</p><p class="cc1-tt">积分</p></li>
+                <li class="fl"><p>10.10</p><p class="cc1-tt">余额</p></li>
+                <li class="fl"><p>100</p><p class="cc1-tt">等级分数</p></li>
+            </ul>
+            <p style="clear: both"></p>
+        </div>
+
+        <!--充值提现-->
+        <div class="a_cc2" align="center">
+            <input type="button" value="充值"/>
+            <input type="button" value="提现"/>
+        </div>
+
+        <!--其他功能模块-->
+        <div class="a_cc3">
+            <ul>
+                <a href="property.html"><li class="fl"><img src="images/icon/asset@2x.png" height="22"><p>资产统计</p></li></a>
+                <a href="javascript:;"><li class="fl"><img src="images/icon/investment_projects@2x.png" height="22"><p>投资项目</p></li></a>
+                <a href="javascript:;"><li class="fl"><img src="images/icon/transaction@2x.png" height="22"><p>交易明细</p></li></a>
+                <a href="javascript:;"><li class="fl"><img src="images/icon/back_to_article@2x.png" height="22"><p>回款日历</p></li></a>
+                <a href="r_name-approve.html"><li class="fl"><img src="images/icon/certification@2x.png" height="22"><p>实名认证</p></li></a>
+                <a href="my_gift.html"><li class="fl"><img src="images/icon/oen@2x.png" height="22"><p>我的礼包</p></li></a>
+                <a href="account_manage.html"><li class="fl"><img src="images/icon/account@2x.png" height="22"><p>账户管理</p></li></a>
+                <!--<a href="javascript:;"><li class="fl" id="deposit"><img src="images/icon/cunguanicon@2x.png" height="22"><p>银行存管</p></li></a>-->
+                <a href="more.html"><li class="fl"><img src="images/icon/more_settings@2x.png" height="22"><p>更多内容</p></li></a>
+            </ul>
+        </div>
+        <p style="clear: both"></p>
+    </div>
+
+</div>
+<script type="text/javascript">
+    $(function () {
+        var t = $(".a_nun").text();
+        $(".experience-cc").css("width",t);
+
+    })
+</script>
+<!--<script type="text/javascript">-->
+    <!--$(function () {-->
+        <!--$("#deposit").click(function () {-->
+            <!--$(".tc_box").show().delay(2500).fadeOut(100);-->
+        <!--})-->
+    <!--})-->
+<!--</script>-->
+</body>
+</html>

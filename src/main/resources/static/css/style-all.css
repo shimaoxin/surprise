@@ -1,0 +1,145 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Helvetica";
+}
+img{
+	border:none;
+}
+.pc-page-all{
+    max-width: 1920px;
+    margin: 0 auto;
+}
+.w-1000{
+    width: 1000px;
+    margin: auto;
+}
+.w-1100{
+    width: 1100px;
+    margin: auto;
+}
+.w-1200{
+    width: 1200px;
+    margin: auto;
+}
+.m-page-all{
+    max-width: 640px;
+    margin: 0 auto;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.pad1 {
+    padding: 1rem 0;
+}
+.pad2 {
+    padding: 2rem 0;
+}
+.pad3{
+    padding: 3rem 0;
+}
+.pad4{
+    padding: 4rem 0;
+}
+.pad5{
+    padding: 5rem 0;
+}
+.pad6{
+    padding: 6rem 0;
+}
+.pad7{
+    padding: 7rem 0;
+}
+.pad8{
+    padding: 8rem 0;
+}
+.pad9{
+    padding: 9rem 0;
+}
+.fw{
+    font-weight: bold;
+}
+.dis_b{
+    display: block!important;
+}
+.detail-footer{
+    position: fixed;
+    max-width: 640px;
+    min-width: 320px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 5px 0;
+    background: #f2d271;
+    color: #222;
+    font-size: 15px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.m-fex_manage-top{
+    height: 46px;
+    position: fixed;
+    max-width: 640px;
+    min-width: 320px;
+    width: 100%;
+    top:0px;
+    left: 0px;
+    right: 0;
+    margin: auto;
+    z-index: 20;
+}
+.m_m-ccn{
+    padding: 8px 1%;
+    text-align: center;
+    color: #333333;
+    font-size: 18px;
+    height:30px;
+    line-height: 30px;
+    position: relative;
+    background: #f2d271;
+}
+.back{
+    position: absolute;
+    left: 3%;
+    margin-top: 4px;
+    vertical-align: middle;
+}
+
+.tc_box{
+    width: 80%;
+    max-width: 500px;
+    height: 120px;
+    position: fixed;
+    left:0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+    z-index: 9999;
+}
+.tc-c1, .tc-c3, .tc-c2{
+    width: 60%;
+    background: #f1d176;
+    border: 1px solid #d7bc74;
+    padding:15px 15px 20px;
+    border-radius: 15px;
+    display: none;
+    margin-top: -70px;
+}
+.tc-c1 img,.tc-c2 img,.tc-c3 img{
+    margin-bottom: 15px;
+}
+input[type="button"], input[type="submit"], input[type="reset"] {
+    -webkit-appearance: none;
+}
+textarea {
+    -webkit-appearance: none;
+}

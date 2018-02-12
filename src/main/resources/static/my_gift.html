@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>渝金所-我的礼包</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link href="css/style-all.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+    <style>
+        body{
+            background: #fafafa;
+        }
+        .ticket-cc{
+            padding: 5px 10px 10px;
+        }
+        .rule{
+            text-align: right;
+            font-size: 14px;
+            color: #bbb;
+        }
+        .rule img{
+            vertical-align: sub;
+            margin-right: 4px;
+        }
+        .rule_quan{
+            text-align: right;
+            font-size: 14px;
+            color: #bbb;
+        }
+        .rule_quan img{
+            vertical-align: sub;
+            margin-right: 4px;
+        }
+        .quan_list li{
+            position: relative;
+            padding: 14px 18px;
+            background: url("images/coupon@2x.png")no-repeat;
+            background-size: 100% 100%;
+            line-height: 26px;
+            margin-top: 15px;
+            font-size: 17px;
+            color: #ff9a57;
+            cursor: pointer;
+        }
+        .quan_list2 li{
+            background: url("images/coupon@2x.png")no-repeat;
+            background-size: 100% 100%;
+            color: #4e4d61!important;
+        }
+        .ratio{
+            position: absolute;
+            font-size: 24px;
+            color: #ff9a57;
+            top: 35%;
+            right: 6%;
+            margin: auto;
+        }
+        .ratio2{
+            position: absolute;
+            font-size: 20px;
+            top: 22%;
+            right: 8%;
+            margin: auto;
+            text-align: center;
+            color: #4e4d61;
+        }
+        .ratio3{
+            position: absolute;
+            font-size: 22px;
+            color: #4e4d61;
+            top: 35%;
+            right: 8%;
+            margin: auto;
+        }
+        .r-nnn{
+            font-size: 32px;
+            font-style: normal;
+        }
+        .min-num{
+              font-size: 14px;
+              overflow: hidden;
+              white-space: nowrap;
+              color: #fff!important;
+
+          }
+        .min-num3{
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .min-num2{
+            background: #fe5446;
+            border-radius: 12px;
+            margin: 5px 0;
+            padding: 0px 8px;
+            color: #fff!important;
+        }
+        .min-num2 img{
+            vertical-align: middle;
+        }
+        .stop-time{
+            color: #999;
+            clear: both;
+            font-size: 16px;
+        }
+        .min-num span,.stop-time span{
+            margin-left: 6px;
+        }
+
+        .tc-bg{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            max-width: 640px;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: 999;
+            display: none;
+        }
+        .tc-box{
+            position: fixed;
+            width: 100%;
+            max-width: 640px;
+            height: 320px;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            display: none;
+            margin: auto;
+            z-index: 1000;
+        }
+        .tc-box2{
+            position: fixed;
+            width: 100%;
+            max-width: 640px;
+            height: 320px;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            display: none;
+            margin: auto;
+            z-index: 1000;
+        }
+        .tc-box-cc{
+            width: 85%;
+            border-radius:15px;
+            margin: 0 auto;
+            display: none;
+            background: #fff;
+        }
+        .tc-box-cc p{
+            color: #666;
+            line-height: 22px;
+        }
+        .tc-box-cc2{
+            width: 85%;
+            border-radius:15px;
+            margin: 0 auto;
+            display: none;
+            background: #fff;
+        }
+        .tc-box-cc2 p{
+            color: #666;
+            line-height: 22px;
+        }
+        .tz-scee{
+            color: #202020!important;
+            font-size: 20px;
+            height: 48px;
+            line-height: 60px!important;
+            text-align: center;
+            border-top-left-radius:15px;
+            border-top-right-radius:15px;
+        }
+        .rote-cc{
+            font-size: 14px;
+            padding: 10px 10px 20px;
+        }
+        .ccos-img{
+            position: absolute;
+            right: 28px;
+            top:-45px
+        }
+        .ccos-img2{
+            position: absolute;
+            right: 28px;
+            top:-45px
+        }
+        .cc-color{
+            color: #444;
+        }
+        .gift-nav{
+            padding-top: 46px;
+            width: 100%;
+            line-height: 40px;
+            background: #f2d271;
+            height: 40px;
+        }
+        .gift-nav ul{
+            width:50%;
+        }
+        .gift-nav ul li{
+            width: 50%;
+            color: #fff;
+            font-size: 13px;
+            position: relative;
+        }
+        .gift-more{
+            margin-top: 10px;
+            font-size: 14px;
+            color: #f2d271;
+            text-align: center;
+        }
+        .hc-after:after {
+            position: absolute;
+            display: inline-block;
+            top: 32px;
+            width: 0;
+            height: 0px;
+            content: '';
+            border-style: solid;
+            border-width: 6px;
+            border-color: #f2d271 #f2d271 transparent transparent;
+            transform: rotate(135deg);
+            box-shadow: 2px -2px 2px rgba(224, 224, 224, 0.4);
+            margin-left: -6px;
+            left:50%;
+        }
+        .act-gift{
+            font-size: 16px!important;
+            color: #202020!important;
+        }
+        .ticket-cc1{
+            display: none;
+        }
+
+        .list-ttc{
+            font-size: 17px!important;
+        }
+        .bfky-icon{
+            vertical-align: middle;
+        }
+        .jh-con{
+            background: #fff;
+            width: 85%;
+            padding: 20px 0;
+            border-radius:15px;
+            margin: 0 auto;
+        }
+        .jh-con-tt{
+            text-align: center;
+            font-size: 16px;
+        }
+        .jh-con ul{
+            width: 90%;
+            margin-left: 5%;
+        }
+        .jh-con li{
+            text-align: center;
+            width: 50%;
+            margin-top: 15px;
+        }
+        .jh-con li input{
+            width: 80%;
+            height: 35px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .true-btn .tz-btn{
+            background: #f2d271;
+            color: #202020;
+            width: 105px;
+            height: 38px;
+            border: none;
+            color: #fff;
+            margin: 0 10px;
+            border-radius: 20px;
+        }
+        .true-btn .know-btn{
+            background: #fff;
+            color: #f2d271;
+            border: 1px solid #f2d271;
+            width: 105px;
+            margin: 0 10px;
+            border-radius: 20px;
+            height: 38px;
+        }
+        @media (max-width: 330px) {
+            .ratio {
+                font-size: 18px;
+            }
+            .ratio2{
+                font-size: 18px;
+            }
+            .quan_list li {
+                font-size: 15px;
+            }
+            .min-num{
+                font-size: 12px;
+            }
+            .list-ttc {
+                font-size: 15px!important;
+            }
+            .r-nnn {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="m-page-all">
+
+    <!--笼罩层-->
+    <div class="tc-bg"></div>
+    <!--弹窗-->
+    <div class="tc-box">
+        <p class="ccos-img"><img src="images/icon/close_2.png" width="30"></p>
+        <div class="tc-box-cc">
+            <p class="tz-scee">红包使用规则</p>
+            <p class="rote-cc">
+                红包使用规则为：<br/>
+                1、未特别注明的激活红包，投资30天及以上标可激活，活动标是否激活以活动规则为准；<br/>
+                2、有使用规则限制的激活红包以实际展示的要求投资即可激活；<br/>
+                3、红包请在有效期内激活和领取，有效期内未激活和未领取的均会被系统自动收回，领取到余额后可直接投资或提现；<br/>
+                4、获取更多活动资讯，请加入官方交流群：423023249，或者微信关注：yufex100,客服热线<a href="tel:400-616-8828">400-616-8828</a>，活动最终解释权归渝金所所有。
+            </p>
+        </div>
+        <div class="tc-box-cc2">
+            <p class="tz-scee">优惠券使用规则</p>
+            <p class="rote-cc">
+                优惠劵试用规则为：<br/>
+                1.加息券可在投资带“加息券”字样提示的项目时选择使用，成功使用后，将在原有的利率上加息，产生更高的收益；<br/>
+                2.使用加息券需要满足加息券上标注的最小投资金额；<br/>
+                3.活动标是否可使用加息券，以实际活动规则和平台公告为准；<br/>
+                4.有任何疑问请联系客服热线<a href="tel:400-616-8828">400-616-8828</a>.</p>
+            </p>
+        </div>
+    </div>
+    <!--弹窗2-->
+    <div class="tc-box2">
+        <p class="ccos-img2"><img src="images/icon/close_2.png" width="30"></p>
+        <div class="jh-con">
+            <p class="jh-con-tt">可激活项目</p>
+            <ul>
+                <li class="fl"><input type="button" value="10天"/></li>
+                <li class="fl"><input type="button" value="1个月"/></li>
+                <li class="fl"><input type="button" value="6个月"/></li>
+                <li class="fl"><input type="button" value="12个月"/></li>
+            </ul>
+            <p class="true-btn" style="clear: both;padding-top: 20px;" align="center"><input class="know-btn" type="button" value="知道了"/><a href="fex_list.html"><input class="tz-btn" type="button" value="去投资"/></a></p>
+        </div>
+    </div>
+
+    <!--顶部返回-->
+    <div class="m-fex_manage-top">
+        <div class="m_m-ccn">
+            <a href="javascript:history.back(-1)"><p class="back"><img src="images/icon/m_back.png" width="22"/></p></a>
+            我的礼包
+        </div>
+    </div>
+
+    <div class="gift-nav" align="center">
+        <ul>
+            <li class="fl hc-after act-gift">红包</li>
+            <li class="fl">优惠券</li>
+        </ul>
+    </div>
+
+    <div class="ticket-cc">
+        <!--红包-->
+        <div class="ticket-cc1 dis_b">
+            <p class="rule"><span><img src="images/icon/doubt.png" width="16">使用规则</span></p>
+            <ul class="quan_list">
+                <li>
+                    <p class="list-ttc">年年有礼<span>2017-09-20到期</span></p>
+                    <div class="min-num2 fl"><p class="min-num fl">10天标专享 满1000激活10元</p><p class="fl">...<span><img src="images/icon/g_more.png" width="7"></span></p></div>
+                    <p class="stop-time">激活金额：<span>0/100元</span></p>
+                    <p class="ratio"><span>待激活</span></p>
+                </li>
+            </ul>
+            <ul class="quan_list quan_list2">
+                <li>
+                    <p class="list-ttc">年年有渝<span>2017-09-20到期</span></p>
+                    <div class="min-num2 fl"><p class="min-num fl">通用 满5000激活20元</p><p class="fl">...<span><img src="images/icon/g_more.png" width="7"></span></p></div>
+                    <p class="stop-time">激活金额：<span>18/100元</span></p>
+                    <p class="ratio2">￥<i class="r-nnn">18</i><br/><span>待领取</span></p>
+                </li>
+            </ul>
+            <ul class="quan_list quan_list2 quan_list3">
+                <li>
+                    <p class="list-ttc">年年有渝<span>2017-09-20到期</span></p>
+                    <div class="min-num2 fl"><p class="min-num fl">部分可用 满5000激活20元</p><p class="fl">...<span><img src="images/icon/g_more.png" width="7"></span></p></div>
+                    <p class="stop-time">激活金额：<span>18/100元</span></p>
+                    <p class="ratio2">￥<i class="r-nnn">18</i><br/><span>待领取</span></p>
+                </li>
+            </ul>
+            <a href="history_red-packet.html"><p class="gift-more">查看历史红包 » </p></a>
+        </div>
+
+        <!--优惠券-->
+        <div class="ticket-cc1">
+            <p class="rule_quan"><span><img src="images/icon/hint.png" width="16">使用规则</span></p>
+            <ul class="quan_list">
+                <li>
+                    <p>加息券<span class="cc-color"></span></p>
+                    <p class="min-num3">最低投资金额：<span>1000</span>元</p>
+                    <p class="stop-time">截止日期：<span>2016-09-12</span></p>
+                    <p class="ratio"><span>18%</span></p>
+                </li>
+                <li>
+                    <p>加息券<span class="cc-color"></span></p>
+                    <p class="min-num3">最低投资金额：<span>1000</span>元</p>
+                    <p class="stop-time">截止日期：<span>2016-09-12</span></p>
+                    <p class="ratio"><span>18%</span></p>
+                </li>
+            </ul>
+            <ul class="quan_list quan_list2">
+                <li>
+                    <p>免费提现券</p>
+                    <p class="min-num3">目前基本为：<span>2</span>元/笔</p>
+                    <p class="stop-time">截止日期：<span>2016-09-12</span></p>
+                    <p class="ratio3"><span>未使用</span></p>
+                </li>
+            </ul>
+            <a href="history_quan.html"><p class="gift-more">查看历史优惠券 » </p></a>
+        </div>
+    </div>
+
+
+</div>
+<script type="text/javascript">
+    $(function () {
+        // 礼包优惠券切换
+        $(".gift-nav ul li").click(function () {
+            $(".gift-nav ul li").removeClass("hc-after");
+            $(".gift-nav ul li").removeClass("act-gift");
+            $(this).addClass("hc-after");
+            $(this).addClass("act-gift");
+
+            var t = $(this).index();
+            $(".ticket-cc .ticket-cc1").removeClass("dis_b");
+            $(".ticket-cc1").eq(t).addClass("dis_b");
+
+        })
+
+        $(".rule span").click(function () {
+            $(".tc-box").fadeIn(100);
+            $(".tc-bg").fadeIn(100);
+            $(".tc-box-cc").show();
+        })
+        $(".rule_quan span").click(function () {
+            $(".tc-box").fadeIn(100);
+            $(".tc-bg").fadeIn(100);
+            $(".tc-box-cc2").show();
+        })
+        $(".ccos-img").click(function () {
+            $(".tc-box").fadeOut(100);
+            $(".tc-bg").fadeOut(100);
+            $(".tc-box-cc").hide();
+            $(".tc-box-cc2").hide();
+        })
+        $(".min-num2").click(function () {
+            $(".tc-box2").fadeIn(100);
+            $(".tc-bg").fadeIn(100);
+        })
+        $(".ccos-img2").click(function () {
+            $(".tc-box2").fadeOut(100);
+            $(".tc-bg").fadeOut(100);
+        })
+        $(".know-btn").click(function () {
+            $(".tc-box2").fadeOut(100);
+            $(".tc-bg").fadeOut(100);
+        })
+
+    })
+</script>
+</body>
+</html>
