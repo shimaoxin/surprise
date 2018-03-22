@@ -63,5 +63,10 @@ public class UserController extends BaseController{
         return true;
     }
 
+    @RequestMapping("/toLogin")
+    public String toLogin(ModelMap model) {
+        return "login";
+    }
+
 
 }

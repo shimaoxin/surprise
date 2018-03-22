@@ -2,6 +2,8 @@ package com.shimaoxin.surprise.controller;
 
 import com.shimaoxin.surprise.common.constant.SessionConstant;
 import com.shimaoxin.surprise.model.user.User;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -10,6 +12,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 public class BaseController {
+
+    /** 
+     * 设置服务器路径
+     * @author 石茂新 232601982@qq.com    
+     * @date 2018/3/22 16:48
+     */
+    @ModelAttribute
+    public void setPath(ModelMap model) {
+        String contextPath = getRequest().getContextPath();
+        model.put("contextPath", contextPath);
+    }
 
     /**
      * 得到RequestAttributes

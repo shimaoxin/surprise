@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>渝金所-登录注册</title>
+    <title></title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
-    <link type="text/css" rel="stylesheet" href="css/style-all.css">
+    <link type="text/css" rel="stylesheet" href="/css/style-all.css">
 
     <style>
         .fcon--top{
@@ -75,12 +75,12 @@
 
         }
         .i_text_p input{
-            background: url("images/icon/l_phone.png")no-repeat;
+            background: url("/images/icon/l_phone.png")no-repeat;
             background-size:25px;
             background-position:2px 8px;
         }
         .i_text_w input{
-            background: url("images/icon/l_lock.png")no-repeat;
+            background: url("/images/icon/l_lock.png")no-repeat;
             background-size:25px;
             background-position:2px 8px;
         }
@@ -305,22 +305,22 @@
         <!--验证、弹窗、警告-->
         <div class="tc_box" align="center">
             <div class="tc-c tc-c1">
-                <p><img src="images/icon/l_close2.png" width="45"></p>
+                <p><img src="/images/icon/l_close2.png" width="45"></p>
                 <p>用户名或者密码错误</p>
             </div>
             <div class="tc-c tc-c2">
-                <p><img src="images/icon/l_warn.png" width="45"></p>
+                <p><img src="/images/icon/l_warn.png" width="45"></p>
                 <p>图形验证码已经过期或不存在，刷新请重新输入</p>
             </div>
             <div class="tc-c tc-c3">
-                <p><img src="images/icon/l_succ.png" width="45"></p>
+                <p><img src="/images/icon/l_succ.png" width="45"></p>
                 <p>注册成功</p>
             </div>
         </div>
 
         <!--头部图片开始-->
         <div class="fcon--top">
-            <img src="picture/login_img.jpg">
+            <img src="/picture/login_img.jpg">
         </div>
         <!--头部图片结束-->
 
@@ -335,29 +335,24 @@
             <div class="login-cc-all">
                 <!--登录-->
                 <div class="login-cc l_cc1 dis_b" align="center">
-                    <ul>
-                        <li class="i_text i_text1 i_text_p">
-                            <p class="fr p_close">
-                                <img class="fr" id="phone_img" src="images/icon/p-close.png" width="24">
-                            </p>
-                            <input type="text" id="phone_input" placeholder="请输入手机号码"/>
-                        </li>
-                        <li class="i_text i_text1 i_text_w">
-                            <img class="fr" id="pw_img" onclick="hideShowPsw()" src="images/icon/pw-hide.png" width="24">
-                            <input id="pw_input" type="password" placeholder="请输入密码"/>
-                        </li>
-                        <li class="i_text i_text1">
-                            <input class="zc_tuxing2" id="zc_tuxing1"  type="text" placeholder="验证码"/>
-                            <span class="p_close">
-                                <img class="ma_close1" id="tux_img2" src="images/icon/p-close.png" width="24">
-                            </span>
-                            <p class="fr zc_txma1"><img src="images/captchaImage.jpg"></p>
-                        </li>
-                        <li class="forget"><a href="forget-p.html">忘记密码？</a></li>
-                        <li>
-                            <input class="btn_1" type="button" value="登录">
-                        </li>
-                    </ul>
+                    <form id="loginFrom">
+                        <ul>
+                            <li class="i_text i_text1 i_text_p">
+                                <p class="fr p_close">
+                                    <img class="fr" id="phone_img" src="/images/icon/p-close.png" width="24">
+                                </p>
+                                <input type="text" name="loginName" id="phone_input" placeholder="请输入用户名"/>
+                            </li>
+                            <li class="i_text i_text1 i_text_w">
+                                <img class="fr" id="pw_img" onclick="hideShowPsw()" src="/images/icon/pw-hide.png" width="24">
+                                <input id="pw_input" name="password" type="password" placeholder="请输入密码"/>
+                            </li>
+                            <li class="forget"><a href="forget-p.html">忘记密码？</a></li>
+                            <li>
+                                <input class="btn_1" type="button" value="登录" onclick="loginIn()">
+                            </li>
+                        </ul>
+                    </form>
                 </div>
 
                 <!--注册-->
@@ -365,32 +360,32 @@
                     <ul>
                         <li class="i_text i_text2 i_text_p2">
                             <p class="fr p_close">
-                                <img class="fr" id="phone_img2" src="images/icon/p-close.png" width="24">
+                                <img class="fr" id="phone_img2" src="/static/images/icon/p-close.png" width="24">
                             </p>
                             <input class="zc_phone" type="text" id="phone_input2" placeholder="请输入手机号"/>
                         </li>
                         <li class="i_text i_text2">
                             <input class="zc_tuxing fl" id="zc_tuxing"  type="text" placeholder="请输入图形验证码"/>
                             <p class="fl p_close">
-                            <img class="ma_close" id="tux_img" src="images/icon/p-close.png" width="24">
+                            <img class="ma_close" id="tux_img" src="/images/icon/p-close.png" width="24">
                             </p>
-                            <p class="fr zc_txma"><img src="images/captchaImage.jpg"></p>
+                            <p class="fr zc_txma"><img src="/images/captchaImage.jpg"></p>
 
                         </li>
                         <li class="i_text i_text2 ">
                             <input class="zc_sjma fl" id="zc_sjma" type="text" placeholder="请输入手机验证码"/>
                             <p class="fl p_close">
-                            <img class="ma_close" id="sjma_img" src="images/icon/p-close.png" width="24">
+                            <img class="ma_close" id="sjma_img" src="/images/icon/p-close.png" width="24">
                             </p>
                             <input class="fr zc_sjma_btn" id="zc_macc" onclick="sendCode(this)" value="获取验证码"/>
 
                         </li>
                         <li class="i_text i_text2 i_text_w2">
-                            <img class="fr pw_img2" id="zc_pw_img1" onclick="hideShowPsw2()" src="images/icon/pw-hide.png" width="24">
+                            <img class="fr pw_img2" id="zc_pw_img1" onclick="hideShowPsw2()" src="/images/icon/pw-hide.png" width="24">
                             <input class="zc_pw" id="zc_pw" type="password" placeholder="请输入密码"/>
                         </li>
                         <li class="i_text i_text2 i_text_w2">
-                            <img class="fr pw_img2" id="zc_pw_img2" onclick="hideShowPsw3()"  src="images/icon/pw-hide.png" width="24">
+                            <img class="fr pw_img2" id="zc_pw_img2" onclick="hideShowPsw3()"  src="/images/icon/pw-hide.png" width="24">
                             <input class="zc_pw2" id="zc_pw2" type="password" placeholder="请再次输入密码"/>
                         </li>
                         <li style="height: 30px;border-bottom: none;padding-left: 15px">
@@ -405,51 +400,33 @@
 
             </div>
         </div>
-
-        <!--获取手机验证码-->
-        <script type="text/javascript">
-            var clock = '';
-            var nums = 60;
-            var btn;
-            function sendCode(thisBtn)
-            {
-                btn = thisBtn;
-                btn.disabled = true; //将按钮置为不可点击
-                btn.value = nums+'s';
-                clock = setInterval(doLoop, 1000); //一秒执行一次
-            }
-
-            function doLoop()
-            {
-                nums--;
-                if(nums > 0){
-                    btn.value = nums+'s';
-                }else{
-                    clearInterval(clock); //清除js定时器
-                    btn.disabled = false;
-                    btn.value = '再次发送';
-                    nums = 60; //重置时间
-                }
-            }
-
-
-        </script>
-
     </div>
-    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="js/yfex_login.js"></script>
+    <script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/js/yfex_login.js"></script>
     <script type="text/javascript">
-        $(function () {
-            //协议弹窗
-            $(".xieyi").click(function () {
-                $(".tc-box_xiyi").show();
-                $(".tc-bg").show();
-            })
-            $(".close_xy img").click(function () {
-                $(".tc-box_xiyi").hide();
-                $(".tc-bg").hide();
-            })
-        })
+
+    //登录
+    function loginIn() {
+        var data = $('#loginFrom').serialize();
+        $.ajax({
+            url : '${contextPath}/user/login',
+            dataType : 'json',
+            data : data,
+            cache : false,
+            success : function(res) {
+                if (!res) {
+                    $(".tc-c").removeClass("dis_b");
+                    $(".tc_box").show().delay(3000).fadeOut(100);
+                    $(".tc-c1").addClass("dis_b");
+                } else {
+                    alert('成功');
+                }
+            },
+
+        });
+    }
+
+
 
     </script>
 </body>

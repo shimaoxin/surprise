@@ -3,7 +3,7 @@ $(function () {
 
 
     // 登录注册切换
-    $(".hover_cc li").click(function () {
+    /*$(".hover_cc li").click(function () {
         $(".hover_cc li").removeClass("c_hover");
         $(".hover_cc li").removeClass("hc-after");
         $(this).addClass("c_hover");
@@ -13,7 +13,7 @@ $(function () {
         $(".login-cc").removeClass("dis_b");
         $(".login-cc").eq(t).addClass("dis_b");
 
-    })
+    })*/
 
     $(".i_text").click(function () {
         $(".i_text").removeClass("acli");
@@ -21,11 +21,11 @@ $(function () {
     })
 
 
-    $(".l_cc1 .btn_1").click(function () {
+    /*$(".l_cc1 .btn_1").click(function () {
         $(".tc-c").removeClass("dis_b");
         $(".tc_box").show().delay(3000).fadeOut(100);
         $(".tc-c1").addClass("dis_b");
-    });
+    });*/
 
     $(".l_cc2 .btn_1").click(function () {
         $(".tc-c").removeClass("dis_b");
