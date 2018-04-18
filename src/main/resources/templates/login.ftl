@@ -9,6 +9,12 @@
     <link type="text/css" rel="stylesheet" href="/css/style-all.css">
 
     <style>
+        html{
+            height: 100%;
+            background-image: url("/picture/bg.jpeg");
+            background-repeat:no-repeat;
+            background-size:100%;
+        }
         .fcon--top{
             width: 100%;
         }
@@ -56,10 +62,6 @@
         }
         .l_cc1 ul li{
             margin-top: 8px;
-            border-bottom: 1px solid #f6f6f6;
-        }
-        .acli{
-            border-bottom: 1px solid #dedede!important;
         }
         .l_cc1 ul .i_text input{
             border: none;
@@ -68,6 +70,7 @@
             height:42px;
             padding-left: 15%;
             margin-bottom: 10px;
+            border-radius:15px;
         }
         .forget{
             text-align: right;
@@ -100,8 +103,7 @@
             letter-spacing: 2px;
         }
         .btn_2{
-            background: #f2d271;
-            color: #222;
+            background: #FF4351;
         }
         #pw_img{
             margin-top: 10px;
@@ -294,6 +296,9 @@
              right: 10px;
              top: 2px;
         }
+        .f_login-con{
+            margin-top: 70%;
+        }
     </style>
 </head>
 <body ontouchstart>
@@ -320,16 +325,16 @@
 
         <!--头部图片开始-->
         <div class="fcon--top">
-            <img src="/picture/login_img.jpg">
+            <#--<img src="/picture/login_img.jpg">-->
         </div>
         <!--头部图片结束-->
 
         <div class="f_login-con">
 
-            <ul class="hover_cc">
-                <li class="fl hc-after c_hover">登录</li>
-                <li class="fl">注册</li>
-            </ul>
+            <#--<ul class="hover_cc">-->
+                <#--<li class="fl hc-after c_hover">登录</li>-->
+                <#--<li class="fl">注册</li>-->
+            <#--</ul>-->
 
 
             <div class="login-cc-all">
@@ -347,7 +352,7 @@
                                 <img class="fr" id="pw_img" onclick="hideShowPsw()" src="/images/icon/pw-hide.png" width="24">
                                 <input id="pw_input" name="password" type="password" placeholder="请输入密码"/>
                             </li>
-                            <li class="forget"><a href="forget-p.html">忘记密码？</a></li>
+                            <#--<li class="forget"><a href="forget-p.html">忘记密码？</a></li>-->
                             <li>
                                 <input class="btn_1" type="button" value="登录" onclick="loginIn()">
                             </li>
@@ -419,7 +424,7 @@
                     $(".tc_box").show().delay(3000).fadeOut(100);
                     $(".tc-c1").addClass("dis_b");
                 } else {
-                    alert('成功');
+                   window.location.href="${contextPath}/user/toIndex";
                 }
             },
 

@@ -11,4 +11,9 @@ public class EventType {
      * 签到
      */
     public static final String SIGN_IN = "sign_in";
+
+    /**
+     * 惊喜
+     */
+    public static final String SURPRISE = "surpise";
 }

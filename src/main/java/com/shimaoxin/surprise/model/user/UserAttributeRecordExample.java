@@ -445,6 +445,126 @@ public class UserAttributeRecordExample {
             return (Criteria) this;
         }
 
+        public Criteria andValuebeforeIsNull() {
+            addCriterion("valueBefore is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andValuebeforeIsNotNull() {
+            addCriterion("valueBefore is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andValuebeforeEqualTo(Integer value) {
+            addCriterion("valueBefore =", value, "valuebefore");
+            return (Criteria) this;
+        }
+
+        public Criteria andValuebeforeNotEqualTo(Integer value) {
+            addCriterion("valueBefore <>", value, "valuebefore");
+            return (Criteria) this;
+        }
+
+        public Criteria andValuebeforeGreaterThan(Integer value) {
+            addCriterion("valueBefore >", value, "valuebefore");
+            return (Criteria) this;
+        }
+
+        public Criteria andValuebeforeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("valueBefore >=", value, "valuebefore");
+            return (Criteria) this;
+        }
+
+        public Criteria andValuebeforeLessThan(Integer value) {
+            addCriterion("valueBefore <", value, "valuebefore");
+            return (Criteria) this;
+        }
+
+        public Criteria andValuebeforeLessThanOrEqualTo(Integer value) {
+            addCriterion("valueBefore <=", value, "valuebefore");
+            return (Criteria) this;
+        }
+
+        public Criteria andValuebeforeIn(List<Integer> values) {
+            addCriterion("valueBefore in", values, "valuebefore");
+            return (Criteria) this;
+        }
+
+        public Criteria andValuebeforeNotIn(List<Integer> values) {
+            addCriterion("valueBefore not in", values, "valuebefore");
+            return (Criteria) this;
+        }
+
+        public Criteria andValuebeforeBetween(Integer value1, Integer value2) {
+            addCriterion("valueBefore between", value1, value2, "valuebefore");
+            return (Criteria) this;
+        }
+
+        public Criteria andValuebeforeNotBetween(Integer value1, Integer value2) {
+            addCriterion("valueBefore not between", value1, value2, "valuebefore");
+            return (Criteria) this;
+        }
+
+        public Criteria andValueafterIsNull() {
+            addCriterion("valueAfter is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andValueafterIsNotNull() {
+            addCriterion("valueAfter is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andValueafterEqualTo(Integer value) {
+            addCriterion("valueAfter =", value, "valueafter");
+            return (Criteria) this;
+        }
+
+        public Criteria andValueafterNotEqualTo(Integer value) {
+            addCriterion("valueAfter <>", value, "valueafter");
+            return (Criteria) this;
+        }
+
+        public Criteria andValueafterGreaterThan(Integer value) {
+            addCriterion("valueAfter >", value, "valueafter");
+            return (Criteria) this;
+        }
+
+        public Criteria andValueafterGreaterThanOrEqualTo(Integer value) {
+            addCriterion("valueAfter >=", value, "valueafter");
+            return (Criteria) this;
+        }
+
+        public Criteria andValueafterLessThan(Integer value) {
+            addCriterion("valueAfter <", value, "valueafter");
+            return (Criteria) this;
+        }
+
+        public Criteria andValueafterLessThanOrEqualTo(Integer value) {
+            addCriterion("valueAfter <=", value, "valueafter");
+            return (Criteria) this;
+        }
+
+        public Criteria andValueafterIn(List<Integer> values) {
+            addCriterion("valueAfter in", values, "valueafter");
+            return (Criteria) this;
+        }
+
+        public Criteria andValueafterNotIn(List<Integer> values) {
+            addCriterion("valueAfter not in", values, "valueafter");
+            return (Criteria) this;
+        }
+
+        public Criteria andValueafterBetween(Integer value1, Integer value2) {
+            addCriterion("valueAfter between", value1, value2, "valueafter");
+            return (Criteria) this;
+        }
+
+        public Criteria andValueafterNotBetween(Integer value1, Integer value2) {
+            addCriterion("valueAfter not between", value1, value2, "valueafter");
+            return (Criteria) this;
+        }
+
         public Criteria andChangetypeIsNull() {
             addCriterion("changeType is null");
             return (Criteria) this;

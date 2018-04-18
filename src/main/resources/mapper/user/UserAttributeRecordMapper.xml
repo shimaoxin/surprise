@@ -7,6 +7,8 @@
     <result column="eventid" property="eventid" jdbcType="VARCHAR" />
     <result column="attributeName" property="attributename" jdbcType="VARCHAR" />
     <result column="changeValue" property="changevalue" jdbcType="INTEGER" />
+    <result column="valueBefore" property="valuebefore" jdbcType="INTEGER" />
+    <result column="valueAfter" property="valueafter" jdbcType="INTEGER" />
     <result column="changeType" property="changetype" jdbcType="VARCHAR" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
     <result column="createDate" property="createdate" jdbcType="TIMESTAMP" />
@@ -70,7 +72,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, userid, eventid, attributeName, changeValue, changeType, remark, createDate
+    id, userid, eventid, attributeName, changeValue, valueBefore, valueAfter, changeType, 
+    remark, createDate
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.shimaoxin.surprise.model.user.UserAttributeRecordExample" >
     select
@@ -104,11 +107,13 @@
   </delete>
   <insert id="insert" parameterType="com.shimaoxin.surprise.model.user.UserAttributeRecord" >
     insert into t_user_attribute_record (id, userid, eventid, 
-      attributeName, changeValue, changeType, 
-      remark, createDate)
+      attributeName, changeValue, valueBefore, 
+      valueAfter, changeType, remark, 
+      createDate)
     values (#{id,jdbcType=VARCHAR}, #{userid,jdbcType=VARCHAR}, #{eventid,jdbcType=VARCHAR}, 
-      #{attributename,jdbcType=VARCHAR}, #{changevalue,jdbcType=INTEGER}, #{changetype,jdbcType=VARCHAR}, 
-      #{remark,jdbcType=VARCHAR}, #{createdate,jdbcType=TIMESTAMP})
+      #{attributename,jdbcType=VARCHAR}, #{changevalue,jdbcType=INTEGER}, #{valuebefore,jdbcType=INTEGER}, 
+      #{valueafter,jdbcType=INTEGER}, #{changetype,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{createdate,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.shimaoxin.surprise.model.user.UserAttributeRecord" >
     insert into t_user_attribute_record
@@ -127,6 +132,12 @@
       </if>
       <if test="changevalue != null" >
         changeValue,
+      </if>
+      <if test="valuebefore != null" >
+        valueBefore,
+      </if>
+      <if test="valueafter != null" >
+        valueAfter,
       </if>
       <if test="changetype != null" >
         changeType,
@@ -153,6 +164,12 @@
       </if>
       <if test="changevalue != null" >
         #{changevalue,jdbcType=INTEGER},
+      </if>
+      <if test="valuebefore != null" >
+        #{valuebefore,jdbcType=INTEGER},
+      </if>
+      <if test="valueafter != null" >
+        #{valueafter,jdbcType=INTEGER},
       </if>
       <if test="changetype != null" >
         #{changetype,jdbcType=VARCHAR},
@@ -189,6 +206,12 @@
       <if test="record.changevalue != null" >
         changeValue = #{record.changevalue,jdbcType=INTEGER},
       </if>
+      <if test="record.valuebefore != null" >
+        valueBefore = #{record.valuebefore,jdbcType=INTEGER},
+      </if>
+      <if test="record.valueafter != null" >
+        valueAfter = #{record.valueafter,jdbcType=INTEGER},
+      </if>
       <if test="record.changetype != null" >
         changeType = #{record.changetype,jdbcType=VARCHAR},
       </if>
@@ -210,6 +233,8 @@
       eventid = #{record.eventid,jdbcType=VARCHAR},
       attributeName = #{record.attributename,jdbcType=VARCHAR},
       changeValue = #{record.changevalue,jdbcType=INTEGER},
+      valueBefore = #{record.valuebefore,jdbcType=INTEGER},
+      valueAfter = #{record.valueafter,jdbcType=INTEGER},
       changeType = #{record.changetype,jdbcType=VARCHAR},
       remark = #{record.remark,jdbcType=VARCHAR},
       createDate = #{record.createdate,jdbcType=TIMESTAMP}
@@ -232,6 +257,12 @@
       <if test="changevalue != null" >
         changeValue = #{changevalue,jdbcType=INTEGER},
       </if>
+      <if test="valuebefore != null" >
+        valueBefore = #{valuebefore,jdbcType=INTEGER},
+      </if>
+      <if test="valueafter != null" >
+        valueAfter = #{valueafter,jdbcType=INTEGER},
+      </if>
       <if test="changetype != null" >
         changeType = #{changetype,jdbcType=VARCHAR},
       </if>
@@ -250,6 +281,8 @@
       eventid = #{eventid,jdbcType=VARCHAR},
       attributeName = #{attributename,jdbcType=VARCHAR},
       changeValue = #{changevalue,jdbcType=INTEGER},
+      valueBefore = #{valuebefore,jdbcType=INTEGER},
+      valueAfter = #{valueafter,jdbcType=INTEGER},
       changeType = #{changetype,jdbcType=VARCHAR},
       remark = #{remark,jdbcType=VARCHAR},
       createDate = #{createdate,jdbcType=TIMESTAMP}

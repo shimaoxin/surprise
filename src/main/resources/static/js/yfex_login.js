@@ -154,28 +154,28 @@ var pwInput3 = document.getElementById("zc_pw2");
 function hideShowPsw(){
     if (pwInput.type == "password") {
         pwInput.type = "text";
-        pwImg.src = "images/icon/pw-show.png";
+        pwImg.src = "/images/icon/pw-show.png";
     }else {
         pwInput.type = "password";
-        pwImg.src = "images/icon/pw-hide.png";
+        pwImg.src = "/images/icon/pw-hide.png";
     }
 }
 function hideShowPsw2(){
     if (pwInput2.type == "password") {
         pwInput2.type = "text";
-        pwImg2.src = "images/icon/pw-show.png";
+        pwImg2.src = "/images/icon/pw-show.png";
     }else {
         pwInput2.type = "password";
-        pwImg2.src = "images/icon/pw-hide.png";
+        pwImg2.src = "/images/icon/pw-hide.png";
     }
 }
 function hideShowPsw3(){
     if (pwInput3.type == "password") {
         pwInput3.type = "text";
-        pwImg3.src = "images/icon/pw-show.png";
+        pwImg3.src = "/images/icon/pw-show.png";
     }else {
         pwInput3.type = "password";
-        pwImg3.src = "images/icon/pw-hide.png";
+        pwImg3.src = "/images/icon/pw-hide.png";
     }
 }
 

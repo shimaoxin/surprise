@@ -29,13 +29,13 @@ public interface IUserEventRecordService {
      * @author 石茂新 232601982@qq.com    
      * @date 2018/2/12 12:08
      */
-    int insert(String type, String userId, String remark);
+    UserEventRecord insert(String type, String userId, String remark);
     
     /** 
      * 插入
      * @author 石茂新 232601982@qq.com    
      * @date 2018/2/12 12:09
      */
-    int insert(String type, String userId);
+    UserEventRecord insert(String type, String userId);
 
 }

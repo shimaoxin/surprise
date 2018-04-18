@@ -13,6 +13,10 @@ public class UserAttributeRecord {
 
     private Integer changevalue;
 
+    private Integer valuebefore;
+
+    private Integer valueafter;
+
     private String changetype;
 
     private String remark;
@@ -57,6 +61,22 @@ public class UserAttributeRecord {
 
     public void setChangevalue(Integer changevalue) {
         this.changevalue = changevalue;
+    }
+
+    public Integer getValuebefore() {
+        return valuebefore;
+    }
+
+    public void setValuebefore(Integer valuebefore) {
+        this.valuebefore = valuebefore;
+    }
+
+    public Integer getValueafter() {
+        return valueafter;
+    }
+
+    public void setValueafter(Integer valueafter) {
+        this.valueafter = valueafter;
     }
 
     public String getChangetype() {

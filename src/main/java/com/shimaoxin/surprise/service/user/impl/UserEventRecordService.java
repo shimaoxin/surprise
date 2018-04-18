@@ -58,18 +58,19 @@ public class UserEventRecordService implements IUserEventRecordService{
     }
 
     @Override
-    public int insert(String type, String userId, String remark) {
+    public UserEventRecord insert(String type, String userId, String remark) {
         UserEventRecord record = new UserEventRecord();
         record.setId(UUIDUtil.generateUUID());
         record.setType(type);
         record.setUserid(userId);
         record.setRemark(remark);
         record.setCreatetime(new Date());
-        return this.insertSelective(record);
+        this.insertSelective(record);
+        return record;
     }
 
     @Override
-    public int insert(String type, String userId) {
+    public UserEventRecord insert(String type, String userId) {
         return this.insert(type, userId, null);
     }
 }
