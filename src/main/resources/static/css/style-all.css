@@ -98,12 +98,12 @@ img{
 .m_m-ccn{
     padding: 8px 1%;
     text-align: center;
-    color: #333333;
+    color: #fff;
     font-size: 18px;
     height:30px;
     line-height: 30px;
     position: relative;
-    background: #f2d271;
+    background: #FF4351;
 }
 .back{
     position: absolute;

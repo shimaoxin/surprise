@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>渝金所-首页</title>
+    <title>首页</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
-    <link type="text/css" rel="stylesheet" href="/css/style-all.css">
+    <link type="text/css" rel="stylesheet" href="/css/button.css">
     <link href="/css/footer.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+    <#include "common.ftl">
     <style>
         #slide {
             margin: 0 auto;
@@ -55,10 +55,10 @@
             background: #f9f9f9;
         }
         .f-hot-all{
-            background: #fff;
             margin-top: 12px;
             padding: 25px 0;
             position: relative;
+            text-align: center;
         }
         .img-hot{
             width: 65%;
@@ -209,32 +209,9 @@
     </div>
     <!--banner结束-->
 
-    <!--火热抢投开始-->
     <div class="f-hot-all">
-        <p class="img-jx"><img src="/images/icon/jx_icon11.png" width="50"></p>
-        <p class="img-hot"><img src="/images/icon/hot_icon11.png"></p>
-        <div class="hot-con">
-            <ul>
-                <li class="fl"><p class="r-color">14.8%</p><p class="sy-tt">预期年化收益</p></li>
-                <li class="fl">
-                    <div class="li2-cc">
-                        <p>车易贷标20170216030</p><p><span>金额<i>500万</i></span><span class="fr">期限<i>6个月</i></span></p>
-                    </div>
-                </li>
-            </ul>
-            <div class="h-rate">
-                <div class="rate-cc">
-                    <p class="fl">项目进度：</p>
-                    <div class="experience-box fl">
-                        <p class="experience-cc fl"></p>
-                    </div>
-                    <p class="a_nun fr">19%</p>
-                </div>
-            </div>
-        </div>
-        <p class="grab-ipt"><input type="button" value="立即抢购"/></p>
+        <button class="bubbly-button" onclick="clickSurprise()">Surprise!</button>
     </div>
-    <!--火热抢投结束-->
 
 </div>
 
@@ -280,6 +257,27 @@
         switchLoad:"_src" //切换加载，真实图片路径为"_src"
 
     });
+
+    //点击惊喜
+     var getSurprise = function() {
+        $.ajax({
+            url : '${contextPath}/user/getSurprise',
+            dataType : 'json',
+            cache : false,
+            success : function(res) {
+                if (!res) {
+                    $tips(1, "臭狗屎，积分不够了哟！");
+                } else {
+                    $tips(3, "得到了新的日志，赶快去查看吧");
+                }
+            },
+
+        });
+    }
+
+    function clickSurprise() {
+        setTimeout(getSurprise, 1000);
+    }
 </script>
 
 <script type="text/javascript">
@@ -290,5 +288,7 @@
 
     })
 </script>
+<script type="text/javascript" src="/js/button.js"></script>
+<#include "tips.ftl">
 </body>
 </html>

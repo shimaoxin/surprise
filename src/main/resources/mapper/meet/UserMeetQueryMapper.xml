@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shimaoxin.surprise.dao.meet.UserMeetQueryMapper" >
+
+    <select id="queryByUserId" resultType="com.shimaoxin.surprise.model.meet.UserMeetQuery" parameterType="string">
+        SELECT
+            *
+        FROM
+            t_user_meet um
+        LEFT JOIN t_meet_record mr ON um.meetId = mr.id
+        LEFT JOIN t_user u ON um.userid = u.id
+        WHERE
+          u.id = #{userId}
+    </select>
+</mapper>

@@ -84,6 +84,7 @@
 			<classifier>jdk15</classifier>
 		</dependency>
 
+
 	</dependencies>
 
 	<build>
@@ -112,7 +113,7 @@
 			<artifactId>docker-maven-plugin</artifactId>
 			<version>0.4.14</version>
 			<configuration>
-				<imageName>${project.artifactId}/20180206</imageName>
+				<imageName>${project.artifactId}/20180418-2</imageName>
 				<dockerDirectory>src/main/resources/docker</dockerDirectory>
 				<dockerHost>http://120.79.90.216:2357</dockerHost>
 				<resources>

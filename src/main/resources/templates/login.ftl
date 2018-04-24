@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title></title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
     <link type="text/css" rel="stylesheet" href="/css/style-all.css">
 
     <style>
@@ -92,7 +90,7 @@
             font-size: 14px;
         }
         .btn_1{
-            background: #cccccc;
+            background: #FF4351;
             border: none;
             width: 100%;
             margin-top: 5px;
@@ -101,9 +99,6 @@
             color: #fff;
             border-radius: 28px;
             letter-spacing: 2px;
-        }
-        .btn_2{
-            background: #FF4351;
         }
         #pw_img{
             margin-top: 10px;
@@ -352,7 +347,7 @@
                                 <img class="fr" id="pw_img" onclick="hideShowPsw()" src="/images/icon/pw-hide.png" width="24">
                                 <input id="pw_input" name="password" type="password" placeholder="请输入密码"/>
                             </li>
-                            <#--<li class="forget"><a href="forget-p.html">忘记密码？</a></li>-->
+                            <li class="forget"><a href="forget-p.html">忘记密码？</a></li>
                             <li>
                                 <input class="btn_1" type="button" value="登录" onclick="loginIn()">
                             </li>
@@ -361,47 +356,47 @@
                 </div>
 
                 <!--注册-->
-                <div class="login-cc l_cc2">
-                    <ul>
-                        <li class="i_text i_text2 i_text_p2">
-                            <p class="fr p_close">
-                                <img class="fr" id="phone_img2" src="/static/images/icon/p-close.png" width="24">
-                            </p>
-                            <input class="zc_phone" type="text" id="phone_input2" placeholder="请输入手机号"/>
-                        </li>
-                        <li class="i_text i_text2">
-                            <input class="zc_tuxing fl" id="zc_tuxing"  type="text" placeholder="请输入图形验证码"/>
-                            <p class="fl p_close">
-                            <img class="ma_close" id="tux_img" src="/images/icon/p-close.png" width="24">
-                            </p>
-                            <p class="fr zc_txma"><img src="/images/captchaImage.jpg"></p>
+                <#--<div class="login-cc l_cc2">-->
+                    <#--<ul>-->
+                        <#--<li class="i_text i_text2 i_text_p2">-->
+                            <#--<p class="fr p_close">-->
+                                <#--<img class="fr" id="phone_img2" src="/static/images/icon/p-close.png" width="24">-->
+                            <#--</p>-->
+                            <#--<input class="zc_phone" type="text" id="phone_input2" placeholder="请输入手机号"/>-->
+                        <#--</li>-->
+                        <#--<li class="i_text i_text2">-->
+                            <#--<input class="zc_tuxing fl" id="zc_tuxing"  type="text" placeholder="请输入图形验证码"/>-->
+                            <#--<p class="fl p_close">-->
+                            <#--<img class="ma_close" id="tux_img" src="/images/icon/p-close.png" width="24">-->
+                            <#--</p>-->
+                            <#--<p class="fr zc_txma"><img src="/images/captchaImage.jpg"></p>-->
 
-                        </li>
-                        <li class="i_text i_text2 ">
-                            <input class="zc_sjma fl" id="zc_sjma" type="text" placeholder="请输入手机验证码"/>
-                            <p class="fl p_close">
-                            <img class="ma_close" id="sjma_img" src="/images/icon/p-close.png" width="24">
-                            </p>
-                            <input class="fr zc_sjma_btn" id="zc_macc" onclick="sendCode(this)" value="获取验证码"/>
+                        <#--</li>-->
+                        <#--<li class="i_text i_text2 ">-->
+                            <#--<input class="zc_sjma fl" id="zc_sjma" type="text" placeholder="请输入手机验证码"/>-->
+                            <#--<p class="fl p_close">-->
+                            <#--<img class="ma_close" id="sjma_img" src="/images/icon/p-close.png" width="24">-->
+                            <#--</p>-->
+                            <#--<input class="fr zc_sjma_btn" id="zc_macc" onclick="sendCode(this)" value="获取验证码"/>-->
 
-                        </li>
-                        <li class="i_text i_text2 i_text_w2">
-                            <img class="fr pw_img2" id="zc_pw_img1" onclick="hideShowPsw2()" src="/images/icon/pw-hide.png" width="24">
-                            <input class="zc_pw" id="zc_pw" type="password" placeholder="请输入密码"/>
-                        </li>
-                        <li class="i_text i_text2 i_text_w2">
-                            <img class="fr pw_img2" id="zc_pw_img2" onclick="hideShowPsw3()"  src="/images/icon/pw-hide.png" width="24">
-                            <input class="zc_pw2" id="zc_pw2" type="password" placeholder="请再次输入密码"/>
-                        </li>
-                        <li style="height: 30px;border-bottom: none;padding-left: 15px">
-                            <input type="checkbox" class="fl" style="vertical-align: middle;margin-top: -7px;margin-right: 5px">
-                            <span class="xieyi" style="font-size: 13px;color:#f2d271;">我已阅读并同意渝金所注册协议</span>
-                        </li>
-                        <li  style="padding-top: 5px;border-bottom: none;">
-                            <input class="btn_1" type="button" value="提交">
-                        </li>
-                    </ul>
-                </div>
+                        <#--</li>-->
+                        <#--<li class="i_text i_text2 i_text_w2">-->
+                            <#--<img class="fr pw_img2" id="zc_pw_img1" onclick="hideShowPsw2()" src="/images/icon/pw-hide.png" width="24">-->
+                            <#--<input class="zc_pw" id="zc_pw" type="password" placeholder="请输入密码"/>-->
+                        <#--</li>-->
+                        <#--<li class="i_text i_text2 i_text_w2">-->
+                            <#--<img class="fr pw_img2" id="zc_pw_img2" onclick="hideShowPsw3()"  src="/images/icon/pw-hide.png" width="24">-->
+                            <#--<input class="zc_pw2" id="zc_pw2" type="password" placeholder="请再次输入密码"/>-->
+                        <#--</li>-->
+                        <#--<li style="height: 30px;border-bottom: none;padding-left: 15px">-->
+                            <#--<input type="checkbox" class="fl" style="vertical-align: middle;margin-top: -7px;margin-right: 5px">-->
+                            <#--<span class="xieyi" style="font-size: 13px;color:#f2d271;">我已阅读并同意渝金所注册协议</span>-->
+                        <#--</li>-->
+                        <#--<li  style="padding-top: 5px;border-bottom: none;">-->
+                            <#--<input class="btn_1" type="button" value="提交">-->
+                        <#--</li>-->
+                    <#--</ul>-->
+                <#--</div>-->
 
             </div>
         </div>
@@ -420,9 +415,7 @@
             cache : false,
             success : function(res) {
                 if (!res) {
-                    $(".tc-c").removeClass("dis_b");
-                    $(".tc_box").show().delay(3000).fadeOut(100);
-                    $(".tc-c1").addClass("dis_b");
+                    $tips(1, "用户名或者密码错误");
                 } else {
                    window.location.href="${contextPath}/user/toIndex";
                 }
@@ -434,5 +427,6 @@
 
 
     </script>
+    <#include "tips.ftl">
 </body>
 </html>

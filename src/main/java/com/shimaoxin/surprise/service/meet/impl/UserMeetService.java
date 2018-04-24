@@ -1,8 +1,10 @@
 package com.shimaoxin.surprise.service.meet.impl;
 
 import com.shimaoxin.surprise.dao.meet.UserMeetMapper;
+import com.shimaoxin.surprise.dao.meet.UserMeetQueryMapper;
 import com.shimaoxin.surprise.model.meet.UserMeet;
 import com.shimaoxin.surprise.model.meet.UserMeetExample;
+import com.shimaoxin.surprise.model.meet.UserMeetQuery;
 import com.shimaoxin.surprise.service.meet.IUserMeetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,9 @@ public class UserMeetService implements IUserMeetService{
 
     @Autowired
     private UserMeetMapper userMeetMapper;
+
+    @Autowired
+    private UserMeetQueryMapper userMeetQueryMapper;
 
     @Override
     public int countByExample(UserMeetExample example) {
@@ -53,5 +58,10 @@ public class UserMeetService implements IUserMeetService{
     @Override
     public int updateByPrimaryKeySelective(UserMeet record) {
         return userMeetMapper.updateByPrimaryKeySelective(record);
+    }
+
+    @Override
+    public List<UserMeetQuery> queryByUserId(String userId) {
+        return userMeetQueryMapper.queryByUserId(userId);
     }
 }

@@ -21,3 +21,8 @@ mybatis:
   mapper-locations: mapper/**/*Mapper.xml
   type-aliases-package: com.shimaoxin.surprise.model.*
 
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+
