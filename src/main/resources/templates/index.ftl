@@ -7,7 +7,6 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <link type="text/css" rel="stylesheet" href="/css/button.css">
-    <link href="/css/footer.css" rel="stylesheet" type="text/css">
     <#include "common.ftl">
     <style>
         #slide {
@@ -215,32 +214,7 @@
 
 </div>
 
-<div class="footer-con" id="uiFooter">
-    <ul>
-
-        <li class="fl">
-            <a  href="" id="wap_index" >
-                <img id="indexImg" src="/images/icon/nav_icon1.png" width="22">
-                <p>首页</p>
-            </a>
-        </li>
-        <li class="fl">
-            <a href="">
-                <img id="investImg" src="/images/icon/nav_icon2.png" width="28">
-                <p>投资</p>
-            </a>
-        </li>
-        <li class="fl">
-            <a href="" id="wap_login">
-                <i class="icon user"></i>
-                <img id="myAccountImg" src="/images/icon/nav_icon3.png" width="24">
-                <p>我的</p>
-            </a>
-        </li>
-
-    </ul>
-    <p style="clear: both;"></p>
-</div>
+<#include "footer.ftl">
 
 <script charset="utf-8" src="/js/touchslide.js"></script>
 <script type="text/javascript">

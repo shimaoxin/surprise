@@ -123,14 +123,6 @@
         <!--红包-->
         <div class="ticket-cc1 dis_b">
             <ul class="quan_list">
-                <#--<li>
-                    <p class="list-ttc">2017-09-20</p>
-                    <p>星期六 愚人节，清明节调休，所以在上班，下了班我就先回去走超市买的菜，你肚子痛在公司上厕所，然后过来，我在家给你煮了咖喱鸡。吃饭完耍了哈，检查了帐篷的东西，然后就睡觉了。</p>
-                </li>
-                <li>
-                    <p class="list-ttc">2017-09-20</p>
-                    <p>星期六 愚人节，清明节调休，所以在上班，下了班我就先回去走超市买的菜，你肚子痛在公司上厕所，然后过来，我在家给你煮了咖喱鸡。吃饭完耍了哈，检查了帐篷的东西，然后就睡觉了。</p>
-                </li>-->
                 <#list meets as meet>
                     <li>
                         <p class="list-ttc">${meet.meetdate?string('yyyy-MM-dd')} </p>
@@ -141,6 +133,7 @@
         </div>
     </div>
 
+    <#include "footer.ftl">
 
 </div>
 <script type="text/javascript">

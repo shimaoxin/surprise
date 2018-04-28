@@ -5,7 +5,7 @@
 
 	<groupId>com.shimaoxin</groupId>
 	<artifactId>surprise</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>surprise</name>
@@ -113,7 +113,7 @@
 			<artifactId>docker-maven-plugin</artifactId>
 			<version>0.4.14</version>
 			<configuration>
-				<imageName>${project.artifactId}/20180418-2</imageName>
+				<imageName>${project.artifactId}/20180424</imageName>
 				<dockerDirectory>src/main/resources/docker</dockerDirectory>
 				<dockerHost>http://120.79.90.216:2357</dockerHost>
 				<resources>

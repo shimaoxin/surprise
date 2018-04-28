@@ -159,7 +159,7 @@ public class UserController extends BaseController{
      * @author 石茂新 232601982@qq.com    
      * @date 2018/4/24 16:26 
      */
-    @RequestMapping("/getUserMeetList")
+    @RequestMapping("/http://120.79.90.216/user/toLogin")
     @ResponseBody
     public PageInfo<UserMeetQuery> getUserMeetList(int page, int pageSize) {
         User user = this.getCurrentUser();
