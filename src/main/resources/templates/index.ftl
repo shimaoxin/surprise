@@ -239,10 +239,10 @@
             dataType : 'json',
             cache : false,
             success : function(res) {
-                if (!res) {
-                    $tips(1, "臭狗屎，积分不够了哟！");
-                } else {
+                if (res.code == 0) {
                     $tips(3, "得到了新的日志，赶快去查看吧");
+                } else {
+                    $tips(1, res.msg);
                 }
             },
 

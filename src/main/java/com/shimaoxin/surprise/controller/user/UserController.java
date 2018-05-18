@@ -3,6 +3,7 @@ package com.shimaoxin.surprise.controller.user;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.shimaoxin.surprise.common.constant.EventType;
+import com.shimaoxin.surprise.common.model.ResultData;
 import com.shimaoxin.surprise.controller.BaseController;
 import com.shimaoxin.surprise.enums.user.UserAttributeName;
 import com.shimaoxin.surprise.model.meet.*;
@@ -96,12 +97,16 @@ public class UserController extends BaseController{
     @RequestMapping("/getSurprise")
     @ResponseBody
     @Transactional
-    public boolean getSurprise(HttpServletResponse response) throws IOException {
+    public ResultData getSurprise(HttpServletResponse response) throws IOException {
         //判断积分
         User user = this.getCurrentUser();
-        if(user == null) return false;
+        if(user == null) {
+            return new ResultData(ResultData.NEED_LOGIN, "需要登录！");
+        }
         int integral = attributeSerive.getValue(user.getId(), UserAttributeName.INTEGRAL);
-        if(integral < needIntegral) return false;
+        if(integral < needIntegral) {
+            return new ResultData("臭狗屎，积分不够了哟！");
+        }
         //得到用户已经得到日志
         UserMeetExample userMeetExample = new UserMeetExample();
         UserMeetExample.Criteria userMeetCrit = userMeetExample.createCriteria();
@@ -116,7 +121,9 @@ public class UserController extends BaseController{
         MeetRecordExample.Criteria meetCrit = meetRecordExample.createCriteria();
         if(meetRecordIds.size() > 0) meetCrit.andIdNotIn(meetRecordIds);
         List<MeetRecord> meetRecords = meetRecordService.selectByExample(meetRecordExample);
-        if(meetRecords == null || meetRecords.size() == 0) return false;
+        if(meetRecords == null || meetRecords.size() == 0) {
+            return new ResultData("没有日志记录哟！");
+        }
         //随机得到日志
         Random random = new Random();
         int index = random.nextInt(meetRecords.size() -1);
@@ -137,7 +144,7 @@ public class UserController extends BaseController{
         eventRecordService.insertSelective(userEventRecord);
         //扣除积分
         attributeSerive.changeAttrbute(user.getId(), eventId, UserAttributeName.INTEGRAL, -needIntegral);
-        return true;
+        return new ResultData();
     }
 
     /**
